@@ -45,7 +45,7 @@ This is **YOUR-SERVER-URL**
 
 Just fork this repo, and create a branch named `gh-pages`.
 
-This will great a github page under you github's account with the `client.js` file.
+This will create a github page under you github's account with the `client.js` file.
 
 After that you will be able to access the client via `https://<YOUR-GITHUB-USERNAME>.github.io/coin-hive-proxy/client.js`
 
