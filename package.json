@@ -1,0 +1,30 @@
+{
+  "name": "coin-hive-proxy",
+  "version": "1.0.0",
+  "description": "coinhive.com websocket + client proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cazala/coin-hive-proxy.git"
+  },
+  "keywords": [
+    "coinhive",
+    "coin-hive",
+    "proxy",
+    "websocket",
+    "server",
+    "client"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cazala/coin-hive-proxy/issues"
+  },
+  "homepage": "https://github.com/cazala/coin-hive-proxy#readme",
+  "dependencies": {
+    "ws": "^3.2.0"
+  }
+}
