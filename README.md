@@ -39,7 +39,7 @@ Just deploy this repo to `now.sh`
 
 This will deploy a proxy instance to your `now.sh` account, and it will give you a url like this: `coin-hive-proxy-ybydcnjgkl.now.sh`.
 
-This is **<YOUR-SERVER-URL>**
+This is **YOUR-SERVER-URL**
 
 ### Client
 
@@ -49,14 +49,14 @@ This will great a github page under you github's account with the `client.js` fi
 
 After that you will be able to access the client via `https://<YOUR-GITHUB-USERNAME>.github.io/coin-hive-proxy/client.js`
 
-This is your **<YOUR-CLIENT-URL>**
+This is your **YOUR-CLIENT-URL**
 
 ### Use it
 
 Now you can use the following script tag instead of CoinHive's to avoid being blocked by an ad-block extension:
 
 ```html
-<script src="<YOUR-CLIENT-URL>?coin-hive-proxy=<YOUR-SERVER-URL>"></script>
+<script src="YOUR-CLIENT-URL?coin-hive-proxy=YOUR-SERVER-URL"></script>
 ```
 
 It should look like [the one above](https://github.com/cazala/coin-hive-proxy#usage).
