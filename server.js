@@ -42,7 +42,8 @@ wsch.onopen = function (ev) {
     console.log('New connection from client\n');
     wsch.onmessage = function (message) {
       console.log('Message from CoinHive to client:\n\n', message.data, '\n');
-      ws.send(message.data);
+      if (ws.readyState == ws.OPEN)
+        ws.send(message.data);
     }
     ws.on('message', function (message) {
       console.log('Message from client to CoinHive:\n\n', message, '\n');
