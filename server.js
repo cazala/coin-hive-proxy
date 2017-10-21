@@ -34,30 +34,35 @@ var servers = [
   "wss://ws028.coinhive.com/proxy",
   "wss://ws032.coinhive.com/proxy"
 ];
-const server = servers[servers.length * Math.random() | 0];
-var wsch = new WebSocket(server);
-wsch.onopen = function (ev) {
-  console.log('Connected to CoinHive 🦄:', server, '\n');
-  wss.on('connection', function connection(ws) {
-    console.log('New connection from client\n');
-    wsch.onmessage = function (message) {
-      console.log('Message from CoinHive to client:\n\n', message.data, '\n');
+wss.on('connection', function connection(ws) {
+  console.log('New connection from client\n');
+  var chserver = servers[servers.length * Math.random() | 0];
+  var chws = new WebSocket(chserver);
+  chws.onmessage = function (message) {
+    console.log('Message from ' + chserver + ' to client:\n\n', message.data, '\n');
+    if (ws.readyState == ws.OPEN)
       ws.send(message.data);
+    else {
+      console.log('Close inactive/slow connection\n');
+      chws.terminate();
+      ws.terminate();
     }
-    ws.on('message', function (message) {
-      console.log('Message from client to CoinHive:\n\n', message, '\n');
-      wsch.send(message);
-    });
-    wsch.onclose = function () {
-      console.log('Disconnected from CoinHive 💀\n');
+  }
+  ws.on('message', function (message) {
+    console.log('Message from client to ' + chserver + ':\n\n', message, '\n');
+    chws.onopen = function (ev) {
+      console.log('Connected to ' + chserver + ' 🦄\n');
+      chws.send(message);
     }
-    wsch.onerror = function (message) {
-      console.log('Error with CoinHive connection 💥\n', message.data);
-    }
+    if (chws.readyState == chws.OPEN)
+      chws.send(message);
   });
-}
-
-
+  chws.onclose = function () {
+    console.log('Disconnected from ' + chserver + ' 💀\n');
+  }
+  chws.onerror = function (message) {
+    console.log('Error with ' + chserver + ' connection 💥\n', message.data);
+  }
+});
 
 console.log('WebSocket server up and running\n');
-
