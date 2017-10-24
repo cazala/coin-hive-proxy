@@ -1,11 +1,13 @@
 Coin-Hive Proxy
 ---------------
 
+### DEPRECATED:
+
+**Use [CoinHive Proxy](https://coinhive-proxy.party) instead.**
+
+---
+
 This is a simple proxy for [CoinHive](https://coinhive.com)'s client and websocket server.
-
-## Disclaimer
-
-This project is not endorsed by or affiliated with `coinhive.com` in any way.
 
 ## Usage
 
@@ -60,3 +62,7 @@ Now you can use the following script tag instead of CoinHive's to avoid being bl
 ```
 
 It should look like [the one above](https://github.com/cazala/coin-hive-proxy#usage).
+
+## Disclaimer
+
+This project is not endorsed by or affiliated with `coinhive.com` in any way.
