@@ -3,4 +3,4 @@ Coin-Hive Proxy
 
 ### DEPRECATED:
 
-**Use [CoinHive Stratum](https://www.npmjs.com/package/coin-hive-stratum) instead.**
+**Use [CoinHive Stratum](https://github.com/cazala/coin-hive-stratum) instead.**
